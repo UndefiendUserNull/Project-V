@@ -187,6 +187,7 @@
     <Compile Include="Game\ExitOnEsc.cs" />
     <Compile Include="Game\FreeCamera.cs" />
     <Compile Include="Game\GameManager.cs" />
+    <Compile Include="Game\Gun.cs" />
     <Compile Include="Game\IHittable.cs" />
     <Compile Include="Game\MainCamera.cs" />
     <Compile Include="Game\PlayerController.cs" />

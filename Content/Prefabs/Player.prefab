@@ -111,7 +111,9 @@
 		"ID": "f747fcdb40575def3f733e895ba38383",
 		"TypeName": "Game.PlayerShooting",
 		"ParentID": "5b88ca1f46abc25adfa51bb615fb6dd1",
-		"V": {}
+		"V": {
+	"currentGun": "257d2539478d11ad5df6eaa7d16a5816"
+}
 	},
 	{
 		"ID": "aae5bfd346bc64005a16f08961643673",

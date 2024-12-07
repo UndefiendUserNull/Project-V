@@ -1,0 +1,9 @@
+{
+	"ID": "257d2539478d11ad5df6eaa7d16a5816",
+	"TypeName": "Game.Gun",
+	"EngineBuild": 6605,
+	"Data": {
+	"fireRate": 1.0,
+	"damage": 30
+}
+}

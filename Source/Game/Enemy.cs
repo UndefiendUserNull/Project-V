@@ -8,10 +8,11 @@ public class Enemy : Script, IHittable
 
     public void Die()
     {
-        Actor.IsActive = false;
+        //Actor.Parent.IsActive = false;
+        Destroy(Actor.Parent);
     }
 
-    public void Hit()
+    public void Hit(int damage)
     {
         Health--;
         if (Health <= 0)

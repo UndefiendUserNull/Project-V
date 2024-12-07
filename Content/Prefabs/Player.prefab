@@ -1,0 +1,130 @@
+{
+	"ID": "e4925b0045a55fb4bd74dab78336914d",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6605,
+	"Data": [
+	{
+		"ID": "1a014544456b9d4a493f2ba6bbd8cd96",
+		"TypeName": "FlaxEngine.CharacterController",
+		"Name": "Player",
+		"Transform": {
+			"Translation": {
+				"X": 180.0,
+				"Y": 350.0,
+				"Z": 870.0
+			}
+		},
+		"Layer": 1,
+		"ContactOffset": 2.0,
+		"Radius": 23.0,
+		"Height": 100.0,
+		"SlopeLimit": 60.0,
+		"NonWalkableMode": 1
+	},
+	{
+		"ID": "40b0977c479615f5983d75bdcb6213ec",
+		"TypeName": "Game.PlayerController",
+		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
+		"V": {
+	"walkSpeed": 250.0,
+	"sprintSpeed": 500.0,
+	"jumpForce": 350.0,
+	"speedMultiplier": 100.0,
+	"groundMask": {
+		"Mask": 1
+	},
+	"Debug_CurrentSpeed": "94ce8e164036d143667e83a8614bc8ab"
+}
+	},
+	{
+		"ID": "5a6996404b291352b554338f569d396c",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
+		"IsActive": false,
+		"Name": "Visual",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -74.970703125,
+				"Z": 0.0
+			},
+			"Scale": {
+				"X": 1.0,
+				"Y": 1.5099999904632569,
+				"Z": 1.0
+			}
+		},
+		"Layer": 1,
+		"Model": "3f82e57744f57c28285150b646ad2198",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "c3756ec342cfda8838f3b8a7920f97a6",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
+		"Name": "Camera Holder",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": 79.23910522460938,
+				"Z": 10.83978271484375
+			}
+		},
+		"Layer": 1
+	},
+	{
+		"ID": "3fee8e3e4505c322fd9bd6a632400565",
+		"TypeName": "MainCamera",
+		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
+		"V": {
+	"controller": "1a014544456b9d4a493f2ba6bbd8cd96",
+	"CameraSmoothing": 25.0
+}
+	},
+	{
+		"ID": "a2ca92de46c4196c9abb14b127ab2eb1",
+		"TypeName": "FlaxEngine.Camera",
+		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
+		"Name": "Main Camera",
+		"StaticFlags": 0,
+		"Layer": 1,
+		"FOV": 90.0,
+		"Near": 5.0
+	},
+	{
+		"ID": "5b88ca1f46abc25adfa51bb615fb6dd1",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
+		"Name": "Hitpoint",
+		"Layer": 1
+	},
+	{
+		"ID": "f747fcdb40575def3f733e895ba38383",
+		"TypeName": "Game.PlayerShooting",
+		"ParentID": "5b88ca1f46abc25adfa51bb615fb6dd1",
+		"V": {}
+	},
+	{
+		"ID": "aae5bfd346bc64005a16f08961643673",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
+		"Name": "Feet",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -74.83157348632813,
+				"Z": 0.0
+			}
+		}
+	}
+]
+}

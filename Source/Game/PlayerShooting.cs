@@ -1,37 +1,73 @@
 ﻿using FlaxEngine;
 
 namespace Game;
-//TODO: Use gun's damage and firerate
 public class PlayerShooting : Script
 {
     public int damage = 15;
     public JsonAssetReference<Gun> currentGun = null;
+
+    private float currentGunFireRate = 0f;
+    private float gunFireRateTimer = 0f;
+
     private Ray shootRay;
-    private Color rayColor = Color.Green;
+    private Color shootRayColor = Color.Green;
     private IHittable storedHittable = null;
     private RayCastHit hit;
+
+
+    public override void OnStart()
+    {
+        currentGunFireRate = currentGun.Instance.fireRate;
+    }
+
+    private void GunFireRateTimer()
+    {
+        if (gunFireRateTimer < currentGunFireRate)
+        {
+            gunFireRateTimer += Time.DeltaTime;
+        }
+    }
+    private void ResetGunSettings()
+    {
+        if (currentGunFireRate != currentGun.Instance.fireRate)
+            currentGunFireRate = currentGun.Instance.fireRate;
+
+        if (damage != currentGun.Instance.damage)
+            damage = currentGun.Instance.damage;
+    }
     public override void OnUpdate()
     {
         shootRay = new Ray(Actor.Position, Actor.Transform.Forward);
+
+        ResetGunSettings();
+        GunFireRateTimer();
+
         if (Input.GetMouseButton(MouseButton.Left))
         {
             Shoot();
         }
-        DebugDraw.DrawRay(shootRay, rayColor);
+
+        Debug.Log(gunFireRateTimer);
+        DebugDraw.DrawRay(shootRay, shootRayColor);
     }
     private void Shoot()
     {
-        DebugDraw.DrawLine(Actor.Position, hit.Point, Color.Red, 0.5f);
-        storedHittable?.Hit(damage);
+        if (gunFireRateTimer >= currentGunFireRate)
+        {
+            storedHittable?.Hit(damage);
+            gunFireRateTimer = 0f;
+            DebugDraw.DrawLine(Actor.Position, hit.Point, Color.Red, 0.5f);
+        }
     }
 
     public override void OnFixedUpdate()
     {
         Physics.RayCast(shootRay.Position, shootRay.Direction, out hit);
         var hittable = hit.Collider?.GetScript<IHittable>();
+
         if (hittable != null)
         {
-            rayColor = Color.Red;
+            shootRayColor = Color.Red;
             var hitActor = hit.Collider;
             GameManager.AddDebugText($"RayHit: {hitActor.Name}");
             GameManager.crosshairUiImage.BackgroundColor = Color.Red;
@@ -40,7 +76,7 @@ public class PlayerShooting : Script
         else
         {
             storedHittable = null;
-            rayColor = Color.Green;
+            shootRayColor = Color.Green;
             GameManager.crosshairUiImage.BackgroundColor = Color.White;
             GameManager.AddDebugText("RayHit: None");
         }

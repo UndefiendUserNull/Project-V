@@ -24,6 +24,22 @@
 			"V": {}
 		},
 		{
+			"ID": "e8faac8c4b10f78ea9fadfb0dadf7972",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "GameManager"
+		},
+		{
+			"ID": "434f8b8a407db3ce25eb58be9349f68b",
+			"TypeName": "GameManager",
+			"ParentID": "e8faac8c4b10f78ea9fadfb0dadf7972",
+			"V": {
+	"playerPrefab": "e4925b0045a55fb4bd74dab78336914d",
+	"controlDebugLabel": "94ce8e164036d143667e83a8614bc8ab",
+	"controlCrosshair": "f20bf1d545b969a2c9f3438fbaddacb1"
+}
+		},
+		{
 			"ID": "28553d634087c67c711ebd96080482aa",
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
@@ -86,9 +102,15 @@
 			"Mode": 0
 		},
 		{
+			"ID": "620f4c234a691e051c0b5c94cc1e257b",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "Enviroment"
+		},
+		{
 			"ID": "4a9d87134ab42f4294db6bbcf1902bde",
 			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
 			"Name": "Floor",
 			"Transform": {
 				"Translation": {
@@ -123,7 +145,7 @@
 		{
 			"ID": "8151810f4df57a919e1a1985eb2590a7",
 			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
 			"Name": "BoxCollider 7",
 			"Transform": {
 				"Translation": {
@@ -158,7 +180,7 @@
 		{
 			"ID": "95bda924400db73ed0fa3b9c53b552ed",
 			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
 			"Name": "Cylinder",
 			"Transform": {
 				"Translation": {
@@ -200,9 +222,15 @@
 			"CollisionData": "9d70d7be44668877c4b16e89c94779d7"
 		},
 		{
+			"ID": "1fe3468e486d679416c069be479ed326",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "UI"
+		},
+		{
 			"ID": "125b8cda4464b85e90b3e288b667ec4d",
 			"TypeName": "FlaxEngine.UICanvas",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"ParentID": "1fe3468e486d679416c069be479ed326",
 			"Name": "Debug UI",
 			"Transform": {
 				"Orientation": {
@@ -418,7 +446,7 @@
 		{
 			"ID": "d6524cab47bda69000aaa1acc065b29d",
 			"TypeName": "FlaxEngine.UICanvas",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"ParentID": "1fe3468e486d679416c069be479ed326",
 			"Name": "Main UI",
 			"Transform": {
 				"Orientation": {
@@ -616,22 +644,6 @@
 	"Enabled": true,
 	"Visible": true,
 	"AutoFocus": false
-}
-		},
-		{
-			"ID": "e8faac8c4b10f78ea9fadfb0dadf7972",
-			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "GameManager"
-		},
-		{
-			"ID": "434f8b8a407db3ce25eb58be9349f68b",
-			"TypeName": "GameManager",
-			"ParentID": "e8faac8c4b10f78ea9fadfb0dadf7972",
-			"V": {
-	"playerPrefab": "e4925b0045a55fb4bd74dab78336914d",
-	"controlDebugLabel": "94ce8e164036d143667e83a8614bc8ab",
-	"controlCrosshair": "f20bf1d545b969a2c9f3438fbaddacb1"
 }
 		}
 	]

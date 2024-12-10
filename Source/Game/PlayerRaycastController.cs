@@ -5,13 +5,14 @@ namespace Game;
 public class PlayerRaycastController : Script
 {
     public JsonAssetReference<Gun> currentGun = null;
+    public List<JsonAssetReference<Gun>> guns;
+    public LayersMask hittableLayers;
 
     private float currentGunFireRate = 0f;
     private float gunFireRateTimer = 0f;
     private float currentRange = 0f;
     private int damage = 15;
     private int currentGunIndex = 0;
-    public List<JsonAssetReference<Gun>> guns;
 
     private Ray shootRay;
     private Color shootRayColor = Color.Green;
@@ -79,19 +80,32 @@ public class PlayerRaycastController : Script
     }
     private void ChangeWeapon()
     {
-        if (Input.GetKeyDown(KeyboardKeys.Alpha1))
+        if (Input.MouseScrollDelta > 0)
         {
             if (currentGunIndex < guns.Count - 1)
             {
                 currentGunIndex++;
-
             }
             else
             {
                 currentGunIndex = 0;
             }
-            currentGun = guns[currentGunIndex];
         }
+
+        else if (Input.MouseScrollDelta < 0)
+        {
+            if (currentGunIndex > 0)
+            {
+                currentGunIndex--;
+            }
+            else
+            {
+                currentGunIndex = 0;
+            }
+        }
+
+        currentGun = guns[currentGunIndex];
+
     }
 
     private void Interact()
@@ -100,14 +114,14 @@ public class PlayerRaycastController : Script
     }
     public override void OnFixedUpdate()
     {
-        if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit, currentRange))
+        GameManager.AddDebugText($"Current Gun: {currentGun.Instance.name}\n");
+        if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit, currentRange, hittableLayers))
         {
             IHittable hittable = hit.Collider?.GetScript<IHittable>();
             IInteractable interactable = hit.Collider?.GetScript<IInteractable>();
             shootRayColor = Color.Red;
             var hitActor = hit.Collider;
             GameManager.AddDebugText($"RayHit: {hitActor.Name}");
-            GameManager.AddDebugText($"\nCurrent Gun: {currentGun.Instance.name}\n");
 
             if (hittable != null)
                 GameManager.AddDebugText($"\nEnemy Health: {hittable.Health}");

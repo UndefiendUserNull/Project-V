@@ -2,12 +2,16 @@ using FlaxEngine;
 
 public class MainCamera : Script
 {
-    public float CameraSmoothing { get; set; } = 20.0f;
+    public float cameraSmoothing = 20.0f;
     public CharacterController controller;
+
+    [HideInEditor]
+    public bool moveMouse = true;
+    public bool showMouse = false;
 
     private float pitch;
     private float yaw;
-    private bool showMouse = false;
+
     public override void OnStart()
     {
         var initialEulerAngles = Actor.Orientation.EulerAngles;
@@ -35,6 +39,7 @@ public class MainCamera : Script
         var mouseDelta = new Float2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         pitch += mouseDelta.Y;
         yaw += mouseDelta.X;
+
         pitch = Mathf.Clamp(pitch + mouseDelta.Y, -88, 88);
 
     }
@@ -42,10 +47,12 @@ public class MainCamera : Script
     public override void OnFixedUpdate()
     {
         var camTrans = Actor.Transform;
-        var camFactor = Mathf.Saturate(CameraSmoothing * Time.DeltaTime);
+        var camFactor = Mathf.Saturate(cameraSmoothing * Time.DeltaTime);
 
         camTrans.Orientation = Quaternion.Lerp(camTrans.Orientation, Quaternion.Euler(pitch, yaw, 0), camFactor);
 
-        Actor.Transform = camTrans;
+        if (moveMouse)
+            Actor.Transform = camTrans;
+
     }
 }

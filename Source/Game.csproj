@@ -183,6 +183,8 @@
     <Compile Include="Game.Gen.cs" />
     <Compile Include="Game\AllVehicleSettingsChanger.cs" />
     <Compile Include="Game\Button.cs" />
+    <Compile Include="Game\Computer.cs" />
+    <Compile Include="Game\ComputerScreenCamera.cs" />
     <Compile Include="Game\DebugText.cs" />
     <Compile Include="Game\DebugTools.cs" />
     <Compile Include="Game\Door.cs" />

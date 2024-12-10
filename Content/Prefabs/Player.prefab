@@ -34,10 +34,13 @@
 	"jumpForce": 350.0,
 	"speedMultiplier": 100.0,
 	"feetRadius": 2.0,
+	"headBobRange": {
+		"X": -0.5,
+		"Y": 0.5
+	},
 	"groundMask": {
 		"Mask": 1
-	},
-	"Debug_CurrentSpeed": "94ce8e164036d143667e83a8614bc8ab"
+	}
 }
 	},
 	{
@@ -108,8 +111,8 @@
 		"TypeName": "MainCamera",
 		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
 		"V": {
-	"controller": "1a014544456b9d4a493f2ba6bbd8cd96",
-	"CameraSmoothing": 25.0
+	"cameraSmoothing": 25.0,
+	"controller": "1a014544456b9d4a493f2ba6bbd8cd96"
 }
 	},
 	{

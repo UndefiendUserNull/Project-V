@@ -5,6 +5,7 @@ namespace Game;
 
 public class PlayerController : Script
 {
+    [Header("Movement Settings")]
     public float walkSpeed = 25f;
     public float sprintSpeed = 50f;
     public float noClipSpeed = 25f;
@@ -12,34 +13,38 @@ public class PlayerController : Script
     public float jumpForce = 250f;
     public float speedMultiplier = 1000f;
     public float feetRadius = 25f;
+    public LayersMask groundMask = LayersMask.Default;
 
     [HideInEditor]
     public float currentSpeed = 0.0f;
-    public LayersMask groundMask;
-    public UIControl Debug_CurrentSpeed = null;
+    [HideInEditor]
+    public Camera mainCamera = null;
+    [HideInEditor]
+    public MainCamera mainCameraScr = null;
 
     private bool isGrounded = false;
     private bool isNoClipping = false;
-    private int noClipLayerIndex = 5;
-    private int playerLayerIndex = 1;
+    private const int noClipLayerIndex = 5;
+    private const int playerLayerIndex = 1;
 
     private CharacterController controller = null;
-    private Camera mainCamera = null;
-    private Label DebugLabel_CurrentSpeed = null;
     private Actor playerFeet = null;
-
+    private Actor cameraHolder = null;
     private Vector3 movement = Vector3.Zero;
     private Vector2 userInput = Vector2.Zero;
     private Vector3 move = Vector3.Zero;
 
     public override void OnAwake()
     {
-        controller = Actor as CharacterController;
-        mainCamera = Actor.GetChild("Camera Holder").GetChild<Camera>() as Camera;
+        cameraHolder = Actor.GetChild("Camera Holder");
+        mainCamera = cameraHolder.GetChild<Camera>();
         playerFeet = Actor.GetChild("Feet");
-        DebugLabel_CurrentSpeed = Debug_CurrentSpeed.Get<Label>();
+        controller = Actor as CharacterController;
     }
-
+    public override void OnStart()
+    {
+        mainCameraScr = cameraHolder.GetScript<MainCamera>();
+    }
     private void DebugDrawing(BoundingSphere boundingSphere)
     {
         Color debugWireSphereGroundColor = isGrounded ? Color.Green : Color.Red;
@@ -77,11 +82,11 @@ public class PlayerController : Script
         movement.X = move.X * currentSpeed;
         movement.Z = move.Z * currentSpeed;
     }
+
     public override void OnUpdate()
     {
         UserInputCalculation();
         PlayerSpeed();
-
         isGrounded = IsGrounded();
 
         DebugDrawing(new(playerFeet.Position, feetRadius));

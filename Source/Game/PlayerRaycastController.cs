@@ -14,6 +14,7 @@ public class PlayerRaycastController : Script
     private int damage = 15;
     private int currentGunIndex = 0;
 
+
     private Ray shootRay;
     private Color shootRayColor = Color.Green;
     private IHittable storedHittable = null;
@@ -116,6 +117,7 @@ public class PlayerRaycastController : Script
     {
         storedInteractable?.Interact();
     }
+
     public override void OnFixedUpdate()
     {
         GameManager.AddDebugText($"Current Gun: {currentGun.Instance.name}\n");

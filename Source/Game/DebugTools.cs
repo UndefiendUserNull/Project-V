@@ -8,7 +8,7 @@ class DebugTools : Script
     {
         if (Input.GetKeyDown(KeyboardKeys.F4))
         {
-            GameManager.playerController.NoClip();
+            GameManager.PlayerController.NoClip();
         }
     }
 }

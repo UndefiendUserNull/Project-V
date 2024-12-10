@@ -25,22 +25,6 @@
 			"V": {}
 		},
 		{
-			"ID": "e8faac8c4b10f78ea9fadfb0dadf7972",
-			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "GameManager"
-		},
-		{
-			"ID": "434f8b8a407db3ce25eb58be9349f68b",
-			"TypeName": "GameManager",
-			"ParentID": "e8faac8c4b10f78ea9fadfb0dadf7972",
-			"V": {
-	"playerPrefab": "e4925b0045a55fb4bd74dab78336914d",
-	"controlDebugLabel": "94ce8e164036d143667e83a8614bc8ab",
-	"controlCrosshair": "f20bf1d545b969a2c9f3438fbaddacb1"
-}
-		},
-		{
 			"ID": "28553d634087c67c711ebd96080482aa",
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
@@ -221,6 +205,124 @@
 			"V": {
 	"Health": 100
 }
+		},
+		{
+			"ID": "11be5f804480ba1c771f1f944fa4161e",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
+			"Name": "Door Test",
+			"Transform": {
+				"Translation": {
+					"X": 736.7706298828125,
+					"Y": 215.0,
+					"Z": 88.61140441894531
+				},
+				"Scale": {
+					"X": 10.0,
+					"Y": 10.0,
+					"Z": 0.10000000149011612
+				}
+			}
+		},
+		{
+			"ID": "ffc2bb064fd3c0446fe3ef928e609827",
+			"TypeName": "Game.Door",
+			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
+			"V": {}
+		},
+		{
+			"ID": "4148836b4748265f1e29c680acecc2a8",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
+			"Name": "Cube 0",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "fe5f6d1d4be65e6bca326d81907faef1",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "8044d87843e341d150791786a3e27b98",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
+			"Name": "Enemy Test",
+			"Transform": {
+				"Translation": {
+					"X": 477.34063720703127,
+					"Y": -268.374267578125,
+					"Z": -609.9345703125
+				}
+			}
+		},
+		{
+			"ID": "96dff6ae4ed5bf1f0f7948862a073f2d",
+			"TypeName": "Game.Enemy",
+			"ParentID": "8044d87843e341d150791786a3e27b98",
+			"V": {
+	"Health": 50
+}
+		},
+		{
+			"ID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "8044d87843e341d150791786a3e27b98",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "f961f5ac410aba090f5a1194c493f038",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
+			"Name": "Button Test",
+			"Transform": {
+				"Translation": {
+					"X": 1144.6319580078126,
+					"Y": -163.4090118408203,
+					"Z": 83.61138916015625
+				}
+			}
+		},
+		{
+			"ID": "d77f99c944f6c5c8681b2a8105b53df8",
+			"TypeName": "Game.Button",
+			"ParentID": "f961f5ac410aba090f5a1194c493f038",
+			"V": {
+	"doorButton": true,
+	"door": "11be5f804480ba1c771f1f944fa4161e"
+}
+		},
+		{
+			"ID": "b734fff34278a69aa5cfb5bab83a5400",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "f961f5ac410aba090f5a1194c493f038",
+			"Name": "Cube 1",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "6cbafe8e4c7ffa21bb20dcbe7816cd9c",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
 		},
 		{
 			"ID": "1fe3468e486d679416c069be479ed326",
@@ -648,47 +750,15 @@
 }
 		},
 		{
-			"ID": "8044d87843e341d150791786a3e27b98",
-			"TypeName": "FlaxEngine.BoxCollider",
+			"ID": "62b12d8d44fee6cca09efebac679c85e",
+			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "Enemy Test",
-			"Transform": {
-				"Translation": {
-					"X": 37.34063720703125,
-					"Y": -28.37425994873047,
-					"Z": -609.9345703125
-				}
-			}
-		},
-		{
-			"ID": "96dff6ae4ed5bf1f0f7948862a073f2d",
-			"TypeName": "Game.Enemy",
-			"ParentID": "8044d87843e341d150791786a3e27b98",
-			"V": {
-	"Health": 50
-}
-		},
-		{
-			"ID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "8044d87843e341d150791786a3e27b98",
-			"Name": "Cube",
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
+			"Name": "Game Main Actors"
 		},
 		{
 			"ID": "5356cf75409fea1f1e9b34a6ad0b6406",
 			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"ParentID": "62b12d8d44fee6cca09efebac679c85e",
 			"Name": "Debug"
 		},
 		{
@@ -698,84 +768,20 @@
 			"V": {}
 		},
 		{
-			"ID": "11be5f804480ba1c771f1f944fa4161e",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "Door Test",
-			"Transform": {
-				"Translation": {
-					"X": 736.7706298828125,
-					"Y": 215.0,
-					"Z": 88.61140441894531
-				},
-				"Scale": {
-					"X": 10.0,
-					"Y": 10.0,
-					"Z": 0.10000000149011612
-				}
-			}
+			"ID": "e8faac8c4b10f78ea9fadfb0dadf7972",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "62b12d8d44fee6cca09efebac679c85e",
+			"Name": "GameManager"
 		},
 		{
-			"ID": "ffc2bb064fd3c0446fe3ef928e609827",
-			"TypeName": "Game.Door",
-			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
-			"V": {}
-		},
-		{
-			"ID": "4148836b4748265f1e29c680acecc2a8",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
-			"Name": "Cube 0",
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "fe5f6d1d4be65e6bca326d81907faef1",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
-		},
-		{
-			"ID": "f961f5ac410aba090f5a1194c493f038",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "Button Test",
-			"Transform": {
-				"Translation": {
-					"X": 1144.6319580078126,
-					"Y": -163.4090118408203,
-					"Z": 83.61138916015625
-				}
-			}
-		},
-		{
-			"ID": "d77f99c944f6c5c8681b2a8105b53df8",
-			"TypeName": "Game.Button",
-			"ParentID": "f961f5ac410aba090f5a1194c493f038",
+			"ID": "434f8b8a407db3ce25eb58be9349f68b",
+			"TypeName": "GameManager",
+			"ParentID": "e8faac8c4b10f78ea9fadfb0dadf7972",
 			"V": {
-	"doorButton": true,
-	"door": "11be5f804480ba1c771f1f944fa4161e"
+	"playerPrefab": "e4925b0045a55fb4bd74dab78336914d",
+	"controlDebugLabel": "94ce8e164036d143667e83a8614bc8ab",
+	"controlCrosshair": "f20bf1d545b969a2c9f3438fbaddacb1"
 }
-		},
-		{
-			"ID": "b734fff34278a69aa5cfb5bab83a5400",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "f961f5ac410aba090f5a1194c493f038",
-			"Name": "Cube 1",
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "6cbafe8e4c7ffa21bb20dcbe7816cd9c",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
 		}
 	]
 }

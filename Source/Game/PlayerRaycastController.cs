@@ -84,7 +84,7 @@ public class PlayerRaycastController : Script
             shootRayColor = Color.Red;
             var hitActor = hit.Collider;
             GameManager.AddDebugText($"RayHit: {hitActor.Name}");
-            GameManager.crosshairUiImage.BackgroundColor = Color.Red;
+            GameManager.CrosshairUiImage.BackgroundColor = Color.Red;
             storedHittable = hittable;
             storedInteractable = interactable;
         }
@@ -93,7 +93,7 @@ public class PlayerRaycastController : Script
             storedHittable = null;
             storedInteractable = null;
             shootRayColor = Color.Green;
-            GameManager.crosshairUiImage.BackgroundColor = Color.White;
+            GameManager.CrosshairUiImage.BackgroundColor = Color.White;
             GameManager.AddDebugText("RayHit: None");
         }
     }

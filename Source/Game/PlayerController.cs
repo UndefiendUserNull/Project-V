@@ -68,7 +68,7 @@ public class PlayerController : Script
         else
             controller.Layer = playerLayerIndex;
 
-        Debug.Log("No Clip On");
+        Debug.Log($"No Clip: {isNoClipping}");
     }
     private void PlayerSpeed()
     {
@@ -90,13 +90,13 @@ public class PlayerController : Script
     {
         return Physics.SphereCast(playerFeet.Position, feetRadius, Vector3.Up, layerMask: groundMask);
     }
-    private void Jump()
+    private void Jump(float deltaTime)
     {
         if (isGrounded)
         {
             if (Input.GetKey(KeyboardKeys.Spacebar))
             {
-                movement.Y = jumpForce;
+                movement.Y = jumpForce * deltaTime;
             }
             else
             {
@@ -113,7 +113,7 @@ public class PlayerController : Script
 
         if (!isNoClipping)
         {
-            controller.SimpleMove(movement * deltaTime);
+            controller.SimpleMove(movement);
         }
         else
         {
@@ -126,7 +126,7 @@ public class PlayerController : Script
             //controller.AddMovement(movement * deltaTime / speedMultiplier * 2);
         }
 
-        Jump();
+        Jump(deltaTime);
 
         // if player hit a ceil or something
         if (Physics.RayCast(mainCamera.Parent.Position, Vector3.Up, 2f))

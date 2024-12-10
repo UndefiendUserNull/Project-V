@@ -39,8 +39,8 @@
 }
 	},
 	{
-		"ID": "99a397a74461d0ed4b7c22a51c1836f9",
-		"TypeName": "Game.PlayerShooting",
+		"ID": "1506fec2453dd106e0e270bf4d76f977",
+		"TypeName": "Game.PlayerRaycastController",
 		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
 		"V": {
 	"currentGun": "e312419f4bfd0f64ee9cedb5431580e5"

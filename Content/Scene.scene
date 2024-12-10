@@ -6,6 +6,7 @@
 		{
 			"ID": "74a68a984824b4510d12589f199ad68f",
 			"TypeName": "FlaxEngine.Scene",
+			"Name": "Test Ground",
 			"LightmapSettings": {
 				"IndirectLightingIntensity": 1.0,
 				"GlobalObjectsScale": 1.0,
@@ -108,8 +109,8 @@
 			"Name": "Enviroment"
 		},
 		{
-			"ID": "4a9d87134ab42f4294db6bbcf1902bde",
-			"TypeName": "FlaxEngine.StaticModel",
+			"ID": "4a7045e748c74e3de29afd8856f99205",
+			"TypeName": "FlaxEngine.BoxCollider",
 			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
 			"Name": "Floor",
 			"Transform": {
@@ -123,7 +124,13 @@
 					"Y": 2.5,
 					"Z": 50.0
 				}
-			},
+			}
+		},
+		{
+			"ID": "4a9d87134ab42f4294db6bbcf1902bde",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "4a7045e748c74e3de29afd8856f99205",
+			"Name": "Floor",
 			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
 			"Buffer": {
 				"Entries": [
@@ -137,16 +144,10 @@
 			}
 		},
 		{
-			"ID": "4a7045e748c74e3de29afd8856f99205",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "4a9d87134ab42f4294db6bbcf1902bde",
-			"Name": "BoxCollider"
-		},
-		{
 			"ID": "8151810f4df57a919e1a1985eb2590a7",
 			"TypeName": "FlaxEngine.BoxCollider",
 			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
-			"Name": "BoxCollider 7",
+			"Name": "Platform React",
 			"Transform": {
 				"Translation": {
 					"X": -143.15936279296876,
@@ -164,7 +165,7 @@
 			"ID": "d8785b6b4dee71f610de678b7b4e2492",
 			"TypeName": "FlaxEngine.StaticModel",
 			"ParentID": "8151810f4df57a919e1a1985eb2590a7",
-			"Name": "Cube",
+			"Name": "Platform React",
 			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
 			"Buffer": {
 				"Entries": [
@@ -178,10 +179,10 @@
 			}
 		},
 		{
-			"ID": "95bda924400db73ed0fa3b9c53b552ed",
-			"TypeName": "FlaxEngine.StaticModel",
+			"ID": "9a73da714b813ba9306c50b4fc8d8e79",
+			"TypeName": "FlaxEngine.MeshCollider",
 			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
-			"Name": "Cylinder",
+			"Name": "Platform Cylinder",
 			"Transform": {
 				"Translation": {
 					"X": -213.35400390625,
@@ -194,6 +195,13 @@
 					"Z": 3.3299999237060549
 				}
 			},
+			"CollisionData": "9d70d7be44668877c4b16e89c94779d7"
+		},
+		{
+			"ID": "95bda924400db73ed0fa3b9c53b552ed",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "9a73da714b813ba9306c50b4fc8d8e79",
+			"Name": "Cylinder",
 			"Model": "223aa9894e90973780ab508621517526",
 			"Buffer": {
 				"Entries": [
@@ -213,13 +221,6 @@
 			"V": {
 	"Health": 100
 }
-		},
-		{
-			"ID": "9a73da714b813ba9306c50b4fc8d8e79",
-			"TypeName": "FlaxEngine.MeshCollider",
-			"ParentID": "95bda924400db73ed0fa3b9c53b552ed",
-			"Name": "Cylinder",
-			"CollisionData": "9d70d7be44668877c4b16e89c94779d7"
 		},
 		{
 			"ID": "1fe3468e486d679416c069be479ed326",
@@ -647,17 +648,31 @@
 }
 		},
 		{
-			"ID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
-			"TypeName": "FlaxEngine.StaticModel",
+			"ID": "8044d87843e341d150791786a3e27b98",
+			"TypeName": "FlaxEngine.BoxCollider",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "Cube",
+			"Name": "Enemy Test",
 			"Transform": {
 				"Translation": {
 					"X": 37.34063720703125,
 					"Y": -28.37425994873047,
 					"Z": -609.9345703125
 				}
-			},
+			}
+		},
+		{
+			"ID": "96dff6ae4ed5bf1f0f7948862a073f2d",
+			"TypeName": "Game.Enemy",
+			"ParentID": "8044d87843e341d150791786a3e27b98",
+			"V": {
+	"Health": 50
+}
+		},
+		{
+			"ID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "8044d87843e341d150791786a3e27b98",
+			"Name": "Cube",
 			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
 			"Buffer": {
 				"Entries": [
@@ -671,20 +686,6 @@
 			}
 		},
 		{
-			"ID": "eaefff5a41b236e0073e65a0052bdf25",
-			"TypeName": "Game.Enemy",
-			"ParentID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
-			"V": {
-	"Health": 99999999
-}
-		},
-		{
-			"ID": "8044d87843e341d150791786a3e27b98",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
-			"Name": "BoxCollider"
-		},
-		{
 			"ID": "5356cf75409fea1f1e9b34a6ad0b6406",
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "74a68a984824b4510d12589f199ad68f",
@@ -695,6 +696,86 @@
 			"TypeName": "Game.DebugTools",
 			"ParentID": "5356cf75409fea1f1e9b34a6ad0b6406",
 			"V": {}
+		},
+		{
+			"ID": "11be5f804480ba1c771f1f944fa4161e",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "Door Test",
+			"Transform": {
+				"Translation": {
+					"X": 736.7706298828125,
+					"Y": 215.0,
+					"Z": 88.61140441894531
+				},
+				"Scale": {
+					"X": 10.0,
+					"Y": 10.0,
+					"Z": 0.10000000149011612
+				}
+			}
+		},
+		{
+			"ID": "ffc2bb064fd3c0446fe3ef928e609827",
+			"TypeName": "Game.Door",
+			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
+			"V": {}
+		},
+		{
+			"ID": "4148836b4748265f1e29c680acecc2a8",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
+			"Name": "Cube 0",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "fe5f6d1d4be65e6bca326d81907faef1",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "f961f5ac410aba090f5a1194c493f038",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "Button Test",
+			"Transform": {
+				"Translation": {
+					"X": 1144.6319580078126,
+					"Y": -163.4090118408203,
+					"Z": 83.61138916015625
+				}
+			}
+		},
+		{
+			"ID": "d77f99c944f6c5c8681b2a8105b53df8",
+			"TypeName": "Game.Button",
+			"ParentID": "f961f5ac410aba090f5a1194c493f038",
+			"V": {
+	"doorButton": true,
+	"door": "11be5f804480ba1c771f1f944fa4161e"
+}
+		},
+		{
+			"ID": "b734fff34278a69aa5cfb5bab83a5400",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "f961f5ac410aba090f5a1194c493f038",
+			"Name": "Cube 1",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "6cbafe8e4c7ffa21bb20dcbe7816cd9c",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
 		}
 	]
 }

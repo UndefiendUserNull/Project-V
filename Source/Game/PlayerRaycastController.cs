@@ -1,7 +1,7 @@
 ﻿using FlaxEngine;
 
 namespace Game;
-public class PlayerShooting : Script
+public class PlayerRaycastController : Script
 {
     public int damage = 15;
     public JsonAssetReference<Gun> currentGun = null;
@@ -12,6 +12,7 @@ public class PlayerShooting : Script
     private Ray shootRay;
     private Color shootRayColor = Color.Green;
     private IHittable storedHittable = null;
+    private IInteractable storedInteractable = null;
     private RayCastHit hit;
     private Actor hitPoint;
     private Actor cameraHolder;
@@ -53,6 +54,10 @@ public class PlayerShooting : Script
         {
             Shoot();
         }
+        else if (Input.GetKeyDown(KeyboardKeys.E))
+        {
+            Interact();
+        }
 
         DebugDraw.DrawRay(shootRay, shootRayColor);
     }
@@ -66,21 +71,27 @@ public class PlayerShooting : Script
         }
     }
 
+    private void Interact()
+    {
+        storedInteractable?.Interact();
+    }
     public override void OnFixedUpdate()
     {
-
         if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit))
         {
             IHittable hittable = hit.Collider?.GetScript<IHittable>();
+            IInteractable interactable = hit.Collider?.GetScript<IInteractable>();
             shootRayColor = Color.Red;
             var hitActor = hit.Collider;
             GameManager.AddDebugText($"RayHit: {hitActor.Name}");
             GameManager.crosshairUiImage.BackgroundColor = Color.Red;
             storedHittable = hittable;
+            storedInteractable = interactable;
         }
         else
         {
             storedHittable = null;
+            storedInteractable = null;
             shootRayColor = Color.Green;
             GameManager.crosshairUiImage.BackgroundColor = Color.White;
             GameManager.AddDebugText("RayHit: None");

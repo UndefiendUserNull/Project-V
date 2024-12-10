@@ -21,11 +21,14 @@ public class PlayerRaycastController : Script
     private RayCastHit hit;
     private Actor hitPoint;
     private Actor cameraHolder;
+    private StaticModel gunModel;
+
 
     public override void OnAwake()
     {
         cameraHolder = Actor.GetChild("Camera Holder");
         hitPoint = cameraHolder.GetChild("Hitpoint");
+        gunModel = cameraHolder.GetChild("Gun Model").As<StaticModel>();
     }
 
     public override void OnStart()
@@ -100,12 +103,13 @@ public class PlayerRaycastController : Script
             }
             else
             {
-                currentGunIndex = 0;
+                currentGunIndex = guns.Count - 1;
             }
         }
-
         currentGun = guns[currentGunIndex];
 
+        if (gunModel.Model != currentGun.Instance.model)
+            gunModel.Model = currentGun.Instance.model;
     }
 
     private void Interact()

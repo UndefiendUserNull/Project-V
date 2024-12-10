@@ -6,6 +6,7 @@
 	"name": "Pistol",
 	"fireRate": 0.4,
 	"damage": 15,
-	"range": 800.0
+	"range": 800.0,
+	"model": "1b4a643d44706750b2e35ea4e11e3663"
 }
 }

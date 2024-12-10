@@ -50,7 +50,8 @@
 		"e312419f4bfd0f64ee9cedb5431580e5",
 		"77a1e0be417a4c5554abfcaed2f275d8",
 		"257d2539478d11ad5df6eaa7d16a5816",
-		"8f507f8640295d139aa102b85db5a771"
+		"8f507f8640295d139aa102b85db5a771",
+		"ebe1522e40f9058b6fd0949fe4f5e923"
 	],
 	"hittableLayers": {
 		"Mask": 1
@@ -127,6 +128,30 @@
 		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
 		"Name": "Hitpoint",
 		"Layer": 1
+	},
+	{
+		"ID": "f62653b04842617d41bf4198479c1308",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
+		"Name": "Gun Model",
+		"Transform": {
+			"Translation": {
+				"X": 50.0,
+				"Y": -80.0,
+				"Z": 125.50201416015625
+			}
+		},
+		"Model": "1987234249f7b3e2ffbc4d8c9d3cb1e3",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
 	},
 	{
 		"ID": "aae5bfd346bc64005a16f08961643673",

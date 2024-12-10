@@ -12,4 +12,6 @@ public class Gun
     public int damage = 0;
     [Tooltip("How far the gun can shoot")]
     public float range = 0f;
+    [Tooltip("Gun's Model")]
+    public Model model = null;
 }

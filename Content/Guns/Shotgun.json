@@ -1,0 +1,12 @@
+{
+	"ID": "ebe1522e40f9058b6fd0949fe4f5e923",
+	"TypeName": "Game.Gun",
+	"EngineBuild": 6605,
+	"Data": {
+	"name": "Shotgun",
+	"fireRate": 0.5,
+	"damage": 50,
+	"range": 500.0,
+	"model": "1987234249f7b3e2ffbc4d8c9d3cb1e3"
+}
+}

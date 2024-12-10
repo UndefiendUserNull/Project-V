@@ -29,6 +29,8 @@
 		"V": {
 	"walkSpeed": 250.0,
 	"sprintSpeed": 500.0,
+	"noClipSpeed": 1.0,
+	"upAndDownNoClipSpeed": 15.0,
 	"jumpForce": 350.0,
 	"speedMultiplier": 100.0,
 	"feetRadius": 2.0,

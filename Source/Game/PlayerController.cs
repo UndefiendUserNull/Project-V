@@ -7,6 +7,8 @@ public class PlayerController : Script
 {
     public float walkSpeed = 25f;
     public float sprintSpeed = 50f;
+    public float noClipSpeed = 25f;
+    public float upAndDownNoClipSpeed = 25f;
     public float jumpForce = 250f;
     public float speedMultiplier = 1000f;
     public float feetRadius = 25f;
@@ -116,11 +118,11 @@ public class PlayerController : Script
         else
         {
             if (Input.GetKey(KeyboardKeys.E))
-                controller.Move(Vector3.Up * deltaTime * 2);
+                controller.Move(Vector3.Up * deltaTime * upAndDownNoClipSpeed);
             if (Input.GetKey(KeyboardKeys.Q))
-                controller.Move(Vector3.Down * deltaTime * 2);
+                controller.Move(Vector3.Down * deltaTime * upAndDownNoClipSpeed);
             movement.Y = 0;
-            controller.Move(movement * deltaTime / speedMultiplier * 2);
+            controller.Move(movement * noClipSpeed * deltaTime / speedMultiplier * upAndDownNoClipSpeed);
             //controller.AddMovement(movement * deltaTime / speedMultiplier * 2);
         }
 

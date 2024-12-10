@@ -10,7 +10,7 @@ public class Enemy : Script, IHittable
     {
         //Actor.Parent.IsActive = false;
         if (!godMode)
-            Destroy(Actor.Parent);
+            Destroy(Parent);
     }
 
     public void Hit(int damage)

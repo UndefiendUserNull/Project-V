@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using FlaxEngine;
-
-namespace Game;
+﻿namespace Game;
 
 public interface IHittable
 {

@@ -10,12 +10,16 @@ public class PlayerController : Script
     public float jumpForce = 250f;
     public float speedMultiplier = 1000f;
     public float feetRadius = 25f;
+
     [HideInEditor]
     public float currentSpeed = 0.0f;
     public LayersMask groundMask;
     public UIControl Debug_CurrentSpeed = null;
 
     private bool isGrounded = false;
+    private bool isNoClipping = false;
+    private int noClipLayerIndex = 5;
+    private int playerLayerIndex = 1;
 
     private CharacterController controller = null;
     private Camera mainCamera = null;
@@ -54,6 +58,16 @@ public class PlayerController : Script
 
         move = (right * userInput.X + forward * userInput.Y).Normalized;
     }
+    public void NoClip()
+    {
+        isNoClipping = !isNoClipping;
+        if (isNoClipping)
+            controller.Layer = noClipLayerIndex;
+        else
+            controller.Layer = playerLayerIndex;
+
+        Debug.Log("No Clip On");
+    }
     private void PlayerSpeed()
     {
         currentSpeed = Input.GetKey(KeyboardKeys.Shift) ? sprintSpeed : walkSpeed;
@@ -88,11 +102,28 @@ public class PlayerController : Script
             }
         }
     }
+
     public override void OnFixedUpdate()
     {
+        //TODO: Fix when jump and land on edge player don't stop jumping
+
         float deltaTime = Time.DeltaTime * speedMultiplier;
 
-        controller.SimpleMove(movement * deltaTime);
+        if (!isNoClipping)
+        {
+            controller.SimpleMove(movement * deltaTime);
+        }
+        else
+        {
+            if (Input.GetKey(KeyboardKeys.E))
+                controller.Move(Vector3.Up * deltaTime * 2);
+            if (Input.GetKey(KeyboardKeys.Q))
+                controller.Move(Vector3.Down * deltaTime * 2);
+            movement.Y = 0;
+            controller.Move(movement * deltaTime / speedMultiplier * 2);
+            //controller.AddMovement(movement * deltaTime / speedMultiplier * 2);
+        }
+
         Jump();
 
         // if player hit a ceil or something

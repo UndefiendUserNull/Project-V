@@ -15,6 +15,7 @@
 			}
 		},
 		"Layer": 1,
+		"Material": "af2dff3742059d9c27aa5d89d09ecf58",
 		"ContactOffset": 2.0,
 		"Radius": 23.0,
 		"Height": 100.0,
@@ -30,10 +31,19 @@
 	"sprintSpeed": 500.0,
 	"jumpForce": 350.0,
 	"speedMultiplier": 100.0,
+	"feetRadius": 2.0,
 	"groundMask": {
 		"Mask": 1
 	},
 	"Debug_CurrentSpeed": "94ce8e164036d143667e83a8614bc8ab"
+}
+	},
+	{
+		"ID": "99a397a74461d0ed4b7c22a51c1836f9",
+		"TypeName": "Game.PlayerShooting",
+		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
+		"V": {
+	"currentGun": "e312419f4bfd0f64ee9cedb5431580e5"
 }
 	},
 	{
@@ -106,14 +116,6 @@
 		"ParentID": "c3756ec342cfda8838f3b8a7920f97a6",
 		"Name": "Hitpoint",
 		"Layer": 1
-	},
-	{
-		"ID": "f747fcdb40575def3f733e895ba38383",
-		"TypeName": "Game.PlayerShooting",
-		"ParentID": "5b88ca1f46abc25adfa51bb615fb6dd1",
-		"V": {
-	"currentGun": "257d2539478d11ad5df6eaa7d16a5816"
-}
 	},
 	{
 		"ID": "aae5bfd346bc64005a16f08961643673",

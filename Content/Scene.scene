@@ -645,6 +645,56 @@
 	"Visible": true,
 	"AutoFocus": false
 }
+		},
+		{
+			"ID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "Cube",
+			"Transform": {
+				"Translation": {
+					"X": 37.34063720703125,
+					"Y": -28.37425994873047,
+					"Z": -609.9345703125
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "eaefff5a41b236e0073e65a0052bdf25",
+			"TypeName": "Game.Enemy",
+			"ParentID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
+			"V": {
+	"Health": 99999999
+}
+		},
+		{
+			"ID": "8044d87843e341d150791786a3e27b98",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "b9a4cbfc459a2e8bb51d4297d32d1a9f",
+			"Name": "BoxCollider"
+		},
+		{
+			"ID": "5356cf75409fea1f1e9b34a6ad0b6406",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "Debug"
+		},
+		{
+			"ID": "1ff2ed1744d471ab7c78e7a5ff2db8be",
+			"TypeName": "Game.DebugTools",
+			"ParentID": "5356cf75409fea1f1e9b34a6ad0b6406",
+			"V": {}
 		}
 	]
 }

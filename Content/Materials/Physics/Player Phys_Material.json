@@ -9,7 +9,7 @@
 	"Restitution": 0.0,
 	"RestitutionCombineMode": 0,
 	"OverrideRestitutionCombineMode": false,
-	"Density": 1000.0,
+	"Density": 0.0,
 	"Tag": ""
 }
 }

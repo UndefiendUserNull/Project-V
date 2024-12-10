@@ -183,7 +183,6 @@
     <Compile Include="Game.Gen.cs" />
     <Compile Include="Game\AllVehicleSettingsChanger.cs" />
     <Compile Include="Game\DebugText.cs" />
-    <Compile Include="Game\DebugTools.cs" />
     <Compile Include="Game\Enemy.cs" />
     <Compile Include="Game\ExitOnEsc.cs" />
     <Compile Include="Game\FreeCamera.cs" />

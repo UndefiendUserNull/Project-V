@@ -13,7 +13,14 @@ public class PlayerShooting : Script
     private Color shootRayColor = Color.Green;
     private IHittable storedHittable = null;
     private RayCastHit hit;
+    private Actor hitPoint;
+    private Actor cameraHolder;
 
+    public override void OnAwake()
+    {
+        cameraHolder = Actor.GetChild("Camera Holder");
+        hitPoint = cameraHolder.GetChild("Hitpoint");
+    }
 
     public override void OnStart()
     {
@@ -37,7 +44,7 @@ public class PlayerShooting : Script
     }
     public override void OnUpdate()
     {
-        shootRay = new Ray(Actor.Position, Actor.Transform.Forward);
+        shootRay = new Ray(hitPoint.Position, cameraHolder.Transform.Forward);
 
         ResetGunSettings();
         GunFireRateTimer();
@@ -47,26 +54,24 @@ public class PlayerShooting : Script
             Shoot();
         }
 
-        Debug.Log(gunFireRateTimer);
         DebugDraw.DrawRay(shootRay, shootRayColor);
     }
     private void Shoot()
     {
-        if (gunFireRateTimer >= currentGunFireRate)
+        if (gunFireRateTimer >= currentGunFireRate && storedHittable != null)
         {
-            storedHittable?.Hit(damage);
+            storedHittable.Hit(damage);
             gunFireRateTimer = 0f;
-            DebugDraw.DrawLine(Actor.Position, hit.Point, Color.Red, 0.5f);
+            DebugDraw.DrawLine(hitPoint.Position, hit.Point, Color.Red, 0.5f);
         }
     }
 
     public override void OnFixedUpdate()
     {
-        Physics.RayCast(shootRay.Position, shootRay.Direction, out hit);
-        var hittable = hit.Collider?.GetScript<IHittable>();
 
-        if (hittable != null)
+        if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit))
         {
+            IHittable hittable = hit.Collider?.GetScript<IHittable>();
             shootRayColor = Color.Red;
             var hitActor = hit.Collider;
             GameManager.AddDebugText($"RayHit: {hitActor.Name}");

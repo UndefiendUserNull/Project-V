@@ -1,0 +1,26 @@
+{
+	"ID": "25b39e6e40f81f5a00f5a1bab9aba1b3",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6605,
+	"Data": [
+	{
+		"ID": "7a0cc65c4c055351258a089a35dad0ff",
+		"TypeName": "FlaxEngine.Decal",
+		"Name": "DecalPrefab_Bullet Hole",
+		"Transform": {
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.0,
+				"Z": 0.7071068286895752,
+				"W": 0.7071068286895752
+			},
+			"Scale": {
+				"X": 0.5,
+				"Y": 0.5,
+				"Z": 0.5
+			}
+		},
+		"Material": "d851b56949bbeb6c5014d6b9baa8b9c2"
+	}
+]
+}

@@ -13,18 +13,30 @@ public class Button : Script, IInteractable
 
     public override void OnAwake()
     {
-        if (door)
-            doorScr = door.GetScript<Door>();
+        if (doorButton)
+        {
+            if (door)
+                doorScr = door.GetScript<Door>();
+            else
+                Debug.LogError("No door found at " + Actor.Position);
+        }
     }
 
     public void Interact()
     {
         if (CanInteract())
         {
-            if (door)
-                doorScr.Open();
+            if (doorButton)
+            {
+                if (door)
+                {
+                    doorScr.Open();
+                    interacted = true;
+                }
+                else
+                    Debug.LogError("No door found at " + Actor.Position);
+            }
 
-            interacted = true;
         }
     }
 

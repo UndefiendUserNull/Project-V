@@ -3,7 +3,9 @@
 	"TypeName": "Game.Gun",
 	"EngineBuild": 6605,
 	"Data": {
+	"name": "SMG",
 	"fireRate": 0.05,
-	"damage": 5
+	"damage": 5,
+	"range": 900.0
 }
 }

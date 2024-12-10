@@ -1,13 +1,17 @@
 ﻿using FlaxEngine;
+using System.Collections.Generic;
 
 namespace Game;
 public class PlayerRaycastController : Script
 {
-    public int damage = 15;
     public JsonAssetReference<Gun> currentGun = null;
 
     private float currentGunFireRate = 0f;
     private float gunFireRateTimer = 0f;
+    private float currentRange = 0f;
+    private int damage = 15;
+    private int currentGunIndex = 0;
+    public List<JsonAssetReference<Gun>> guns;
 
     private Ray shootRay;
     private Color shootRayColor = Color.Green;
@@ -40,6 +44,9 @@ public class PlayerRaycastController : Script
         if (currentGunFireRate != currentGun.Instance.fireRate)
             currentGunFireRate = currentGun.Instance.fireRate;
 
+        if (currentRange != currentGun.Instance.range)
+            currentRange = currentGun.Instance.range;
+
         if (damage != currentGun.Instance.damage)
             damage = currentGun.Instance.damage;
     }
@@ -58,7 +65,7 @@ public class PlayerRaycastController : Script
         {
             Interact();
         }
-
+        ChangeWeapon();
         DebugDraw.DrawRay(shootRay, shootRayColor);
     }
     private void Shoot()
@@ -70,6 +77,22 @@ public class PlayerRaycastController : Script
             DebugDraw.DrawLine(hitPoint.Position, hit.Point, Color.Red, 0.5f);
         }
     }
+    private void ChangeWeapon()
+    {
+        if (Input.GetKeyDown(KeyboardKeys.Alpha1))
+        {
+            if (currentGunIndex < guns.Count - 1)
+            {
+                currentGunIndex++;
+
+            }
+            else
+            {
+                currentGunIndex = 0;
+            }
+            currentGun = guns[currentGunIndex];
+        }
+    }
 
     private void Interact()
     {
@@ -77,13 +100,18 @@ public class PlayerRaycastController : Script
     }
     public override void OnFixedUpdate()
     {
-        if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit))
+        if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit, currentRange))
         {
             IHittable hittable = hit.Collider?.GetScript<IHittable>();
             IInteractable interactable = hit.Collider?.GetScript<IInteractable>();
             shootRayColor = Color.Red;
             var hitActor = hit.Collider;
             GameManager.AddDebugText($"RayHit: {hitActor.Name}");
+            GameManager.AddDebugText($"\nCurrent Gun: {currentGun.Instance.name}\n");
+
+            if (hittable != null)
+                GameManager.AddDebugText($"\nEnemy Health: {hittable.Health}");
+
             GameManager.CrosshairUiImage.BackgroundColor = Color.Red;
             storedHittable = hittable;
             storedInteractable = interactable;

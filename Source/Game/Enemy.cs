@@ -15,7 +15,7 @@ public class Enemy : Script, IHittable
 
     public void Hit(int damage)
     {
-        Health--;
+        Health -= damage;
         if (Health <= 0)
             Die();
     }

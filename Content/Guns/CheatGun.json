@@ -3,7 +3,9 @@
 	"TypeName": "Game.Gun",
 	"EngineBuild": 6605,
 	"Data": {
+	"name": "Cheat Gun",
 	"fireRate": 0.001,
-	"damage": 1000
+	"damage": 1000,
+	"range": 9999999.0
 }
 }

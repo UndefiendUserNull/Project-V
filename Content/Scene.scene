@@ -207,47 +207,6 @@
 }
 		},
 		{
-			"ID": "11be5f804480ba1c771f1f944fa4161e",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
-			"Name": "Door Test",
-			"Transform": {
-				"Translation": {
-					"X": 736.7706298828125,
-					"Y": 215.0,
-					"Z": 88.61140441894531
-				},
-				"Scale": {
-					"X": 10.0,
-					"Y": 10.0,
-					"Z": 0.10000000149011612
-				}
-			}
-		},
-		{
-			"ID": "ffc2bb064fd3c0446fe3ef928e609827",
-			"TypeName": "Game.Door",
-			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
-			"V": {}
-		},
-		{
-			"ID": "4148836b4748265f1e29c680acecc2a8",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "11be5f804480ba1c771f1f944fa4161e",
-			"Name": "Cube 0",
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "fe5f6d1d4be65e6bca326d81907faef1",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
-		},
-		{
 			"ID": "8044d87843e341d150791786a3e27b98",
 			"TypeName": "FlaxEngine.BoxCollider",
 			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
@@ -304,7 +263,7 @@
 			"ParentID": "f961f5ac410aba090f5a1194c493f038",
 			"V": {
 	"doorButton": true,
-	"door": "11be5f804480ba1c771f1f944fa4161e"
+	"door": "aae6c7a04219ae304dead0a27ee8e1b9"
 }
 		},
 		{
@@ -317,6 +276,57 @@
 				"Entries": [
 					{
 						"Material": "6cbafe8e4c7ffa21bb20dcbe7816cd9c",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "aae6c7a04219ae304dead0a27ee8e1b9",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "620f4c234a691e051c0b5c94cc1e257b",
+			"Name": "Door Test",
+			"Transform": {
+				"Translation": {
+					"X": 981.1168823242188,
+					"Y": -195.0,
+					"Z": 142.11129760742188
+				},
+				"Scale": {
+					"X": 1.0,
+					"Y": 2.2799489498138429,
+					"Z": 0.314803808927536
+				}
+			},
+			"Center": {
+				"X": 0.00006103515625,
+				"Y": 0.0,
+				"Z": 0.0
+			},
+			"Size": {
+				"X": 100.00006103515625,
+				"Y": 99.99999237060547,
+				"Z": 99.99998474121094
+			}
+		},
+		{
+			"ID": "c7ece45543102ab472a416a997f3d268",
+			"TypeName": "Game.Door",
+			"ParentID": "aae6c7a04219ae304dead0a27ee8e1b9",
+			"V": {}
+		},
+		{
+			"ID": "fe946f944e3c129fed45cd956f2fcf0d",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "aae6c7a04219ae304dead0a27ee8e1b9",
+			"Name": "Cube",
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
 						"ShadowsMode": 3,
 						"Visible": true,
 						"ReceiveDecals": true
@@ -453,8 +463,8 @@
 			"Name": "General",
 			"Transform": {
 				"Translation": {
-					"X": 21.0,
-					"Y": 135.0,
+					"X": 30.0,
+					"Y": 4.0,
 					"Z": 0.0
 				},
 				"Orientation": {
@@ -466,7 +476,7 @@
 			},
 			"Control": "FlaxEngine.GUI.Label",
 			"Data": {
-	"Text": "Speed : 15",
+	"Text": "Stuff\nDebug\nSpeed : 15\nInfo\nEtc",
 	"CaseOption": 0,
 	"Bold": false,
 	"Italic": false,
@@ -516,18 +526,18 @@
 		"Y": 0.0
 	},
 	"Offsets": {
-		"Left": 21.0,
-		"Right": 100.0,
-		"Top": 135.0,
-		"Bottom": 20.0
+		"Left": 30.0,
+		"Right": 92.0,
+		"Top": 4.0,
+		"Bottom": 97.0
 	},
 	"Scale": {
 		"X": 1.0,
 		"Y": 1.0
 	},
 	"Pivot": {
-		"X": 0.5,
-		"Y": 0.5
+		"X": 0.0,
+		"Y": 0.0
 	},
 	"Shear": {
 		"X": 0.0,

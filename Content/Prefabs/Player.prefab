@@ -45,7 +45,13 @@
 		"TypeName": "Game.PlayerRaycastController",
 		"ParentID": "1a014544456b9d4a493f2ba6bbd8cd96",
 		"V": {
-	"currentGun": "e312419f4bfd0f64ee9cedb5431580e5"
+	"currentGun": "77a1e0be417a4c5554abfcaed2f275d8",
+	"guns": [
+		"e312419f4bfd0f64ee9cedb5431580e5",
+		"77a1e0be417a4c5554abfcaed2f275d8",
+		"257d2539478d11ad5df6eaa7d16a5816",
+		"8f507f8640295d139aa102b85db5a771"
+	]
 }
 	},
 	{

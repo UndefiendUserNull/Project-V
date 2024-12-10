@@ -3,7 +3,9 @@
 	"TypeName": "Game.Gun",
 	"EngineBuild": 6605,
 	"Data": {
+	"name": "Revolver",
 	"fireRate": 1.0,
-	"damage": 30
+	"damage": 30,
+	"range": 5000.0
 }
 }

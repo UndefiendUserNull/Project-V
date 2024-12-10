@@ -3,7 +3,9 @@
 	"TypeName": "Game.Gun",
 	"EngineBuild": 6605,
 	"Data": {
+	"name": "Pistol",
 	"fireRate": 0.4,
-	"damage": 15
+	"damage": 15,
+	"range": 800.0
 }
 }

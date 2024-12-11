@@ -6,7 +6,7 @@ public class MainCamera : Script
     public CharacterController controller;
 
     [HideInEditor]
-    public bool moveMouse = true;
+    public bool rotate = true;
     public bool showMouse = false;
 
     private float pitch;
@@ -51,7 +51,7 @@ public class MainCamera : Script
 
         camTrans.Orientation = Quaternion.Lerp(camTrans.Orientation, Quaternion.Euler(pitch, yaw, 0), camFactor);
 
-        if (moveMouse)
+        if (rotate)
             Actor.Transform = camTrans;
 
     }

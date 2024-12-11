@@ -8,6 +8,7 @@ public class GameManager : Script
     public Prefab playerPrefab;
     public static Actor Player { get; private set; }
     public static PlayerController PlayerController { get; private set; }
+    public static MainCamera MainCamera { get; private set; }
 
     public static Label DebugLabel { get; private set; }
     public static Image CrosshairUiImage { get; private set; }
@@ -34,6 +35,7 @@ public class GameManager : Script
     {
         Player = PrefabManager.SpawnPrefab(playerPrefab, Scene, new Transform(Vector3.Zero));
         PlayerController = Player.GetScript<PlayerController>();
+        MainCamera = Player.GetChild("Camera Holder").GetScript<MainCamera>();
         DebugLabel = controlDebugLabel.Get<Label>();
         CrosshairUiImage = controlCrosshair.Get<Image>();
     }

@@ -1,27 +1,35 @@
-﻿using System;
-using FlaxEngine;
+﻿using FlaxEngine;
 
 namespace Game;
 
 public class Computer : Script, IInteractable
 {
-    private Actor cameraPos;
-
-    public override void OnAwake()
+    public Actor computerScreenUI;
+    public override void OnStart()
     {
-        cameraPos = Actor.GetChild("CameraPos");
+        computerScreenUI.IsActive = false;
     }
 
     public void Interact()
     {
-        //GameManager.PlayerController.mainCamera.Position = cameraPos.Position;
-        GameManager.PlayerController.mainCamera.Transform = cameraPos.Transform;
-        GameManager.PlayerController.mainCameraScr.moveMouse = false;
-        GameManager.PlayerController.mainCameraScr.showMouse = true;
+        computerScreenUI.IsActive = true;
+        GameManager.PlayerController.disableMovement = true;
+        GameManager.MainCamera.rotate = false;
+        GameManager.MainCamera.showMouse = true;
     }
 
+    public override void OnUpdate()
+    {
+        if (Input.GetKeyDown(KeyboardKeys.Q))
+        {
+            computerScreenUI.IsActive = false;
+            GameManager.PlayerController.disableMovement = false;
+            GameManager.MainCamera.rotate = true;
+            GameManager.MainCamera.showMouse = false;
+        }
+    }
     public bool CanInteract()
     {
-        throw new NotImplementedException();
+        return true;
     }
 }

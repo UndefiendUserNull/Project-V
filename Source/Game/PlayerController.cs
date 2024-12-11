@@ -13,6 +13,8 @@ public class PlayerController : Script
     public float jumpForce = 250f;
     public float speedMultiplier = 1000f;
     public float feetRadius = 25f;
+    public bool disableMovement = false;
+
     public LayersMask groundMask = LayersMask.Default;
 
     [HideInEditor]
@@ -77,8 +79,10 @@ public class PlayerController : Script
     }
     private void PlayerSpeed()
     {
-        currentSpeed = Input.GetKey(KeyboardKeys.Shift) ? sprintSpeed : walkSpeed;
-
+        if (!disableMovement)
+            currentSpeed = Input.GetKey(KeyboardKeys.Shift) ? sprintSpeed : walkSpeed;
+        else
+            currentSpeed = 0;
         movement.X = move.X * currentSpeed;
         movement.Z = move.Z * currentSpeed;
     }

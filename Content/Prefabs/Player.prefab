@@ -34,10 +34,6 @@
 	"jumpForce": 350.0,
 	"speedMultiplier": 100.0,
 	"feetRadius": 2.0,
-	"headBobRange": {
-		"X": -0.5,
-		"Y": 0.5
-	},
 	"groundMask": {
 		"Mask": 1
 	}
@@ -123,7 +119,8 @@
 		"StaticFlags": 0,
 		"Layer": 1,
 		"FOV": 90.0,
-		"Near": 5.0
+		"Near": 5.0,
+		"RenderLayersMask": 4294967231
 	},
 	{
 		"ID": "5b88ca1f46abc25adfa51bb615fb6dd1",

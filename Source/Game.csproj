@@ -182,11 +182,12 @@
     <None Include="Shaders\Siom.shader" />
     <Compile Include="Game.Gen.cs" />
     <Compile Include="Game\AllVehicleSettingsChanger.cs" />
-    <Compile Include="Game\Button.cs" />
     <Compile Include="Game\Computer.cs" />
+    <Compile Include="Game\ComputerScreen.cs" />
     <Compile Include="Game\DebugText.cs" />
     <Compile Include="Game\DebugTools.cs" />
     <Compile Include="Game\Door.cs" />
+    <Compile Include="Game\EmailUi.cs" />
     <Compile Include="Game\Enemy.cs" />
     <Compile Include="Game\ExitOnEsc.cs" />
     <Compile Include="Game\FreeCamera.cs" />
@@ -194,26 +195,29 @@
     <Compile Include="Game\Gun.cs" />
     <Compile Include="Game\IHittable.cs" />
     <Compile Include="Game\IInteractable.cs" />
+    <Compile Include="Game\InteractableButton.cs" />
+    <Compile Include="Game\KillRequest.cs" />
+    <Compile Include="Game\KillRequestMessage.cs" />
     <Compile Include="Game\MainCamera.cs" />
     <Compile Include="Game\PlayerController.cs" />
     <Compile Include="Game\PlayerRaycastController.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Debug|x64' ">
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Debug|x64' " >
     <Compile Visible="false" Include="D:\Flax Projects\Project V\Cache\Intermediate\GameEditorTarget\Windows\x64\Debug\Game\Game.Bindings.Gen.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Development|x64' ">
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Development|x64' " >
     <Compile Visible="false" Include="D:\Flax Projects\Project V\Cache\Intermediate\GameEditorTarget\Windows\x64\Development\Game\Game.Bindings.Gen.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Release|x64' ">
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Release|x64' " >
     <Compile Visible="false" Include="D:\Flax Projects\Project V\Cache\Intermediate\GameEditorTarget\Windows\x64\Release\Game\Game.Bindings.Gen.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Debug|x64' ">
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Debug|x64' " >
     <Compile Visible="false" Include="D:\Flax Projects\Project V\Cache\Intermediate\GameTarget\Windows\x64\Debug\Game\Game.Bindings.Gen.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Development|x64' ">
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Development|x64' " >
     <Compile Visible="false" Include="D:\Flax Projects\Project V\Cache\Intermediate\GameTarget\Windows\x64\Development\Game\Game.Bindings.Gen.cs" />
   </ItemGroup>
-  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Release|x64' ">
+  <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Release|x64' " >
     <Compile Visible="false" Include="D:\Flax Projects\Project V\Cache\Intermediate\GameTarget\Windows\x64\Release\Game\Game.Bindings.Gen.cs" />
   </ItemGroup>
 </Project>

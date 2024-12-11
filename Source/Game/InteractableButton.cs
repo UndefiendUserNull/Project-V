@@ -2,7 +2,7 @@
 
 namespace Game;
 
-public class Button : Script, IInteractable
+public class InteractableButton : Script, IInteractable
 {
     public bool doorButton;
     [VisibleIf("doorButton")]

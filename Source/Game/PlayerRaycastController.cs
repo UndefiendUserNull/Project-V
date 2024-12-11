@@ -34,7 +34,7 @@ public class PlayerRaycastController : Script
 
     public override void OnStart()
     {
-        currentGunFireRate = currentGun.Instance.fireRate;
+        currentGunFireRate = currentGun.Instance.FireRate;
     }
 
     private void GunFireRateTimer()
@@ -46,14 +46,14 @@ public class PlayerRaycastController : Script
     }
     private void ResetGunSettings()
     {
-        if (currentGunFireRate != currentGun.Instance.fireRate)
-            currentGunFireRate = currentGun.Instance.fireRate;
+        if (currentGunFireRate != currentGun.Instance.FireRate)
+            currentGunFireRate = currentGun.Instance.FireRate;
 
-        if (currentRange != currentGun.Instance.range)
-            currentRange = currentGun.Instance.range;
+        if (currentRange != currentGun.Instance.Range)
+            currentRange = currentGun.Instance.Range;
 
-        if (damage != currentGun.Instance.damage)
-            damage = currentGun.Instance.damage;
+        if (damage != currentGun.Instance.Damage)
+            damage = currentGun.Instance.Damage;
     }
     public override void OnUpdate()
     {
@@ -109,8 +109,8 @@ public class PlayerRaycastController : Script
         }
         currentGun = guns[currentGunIndex];
 
-        if (gunModel.Model != currentGun.Instance.model)
-            gunModel.Model = currentGun.Instance.model;
+        if (gunModel.Model != currentGun.Instance.Model)
+            gunModel.Model = currentGun.Instance.Model;
     }
 
     private void Interact()
@@ -120,7 +120,7 @@ public class PlayerRaycastController : Script
 
     public override void OnFixedUpdate()
     {
-        GameManager.AddDebugText($"Current Gun: {currentGun.Instance.name}\n");
+        GameManager.AddDebugText($"Current Gun: {currentGun.Instance.Name}\n");
         if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit, currentRange, hittableLayers))
         {
             IHittable hittable = hit.Collider?.GetScript<IHittable>();

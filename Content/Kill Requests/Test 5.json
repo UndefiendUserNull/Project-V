@@ -1,0 +1,10 @@
+{
+	"ID": "4c6bc817492f5bea04d5d0a32876da53",
+	"TypeName": "Game.KillRequest",
+	"EngineBuild": 6605,
+	"Data": {
+	"Subject": "Untraceable, Unseen, Unheard",
+	"Message": "There’s a job for someone reliable.\nAn individual has overstayed their welcome.\n\nPayment: <color=green>$60,000</color> in <color=red>Bearer Bonds</color>.\nHalf upfront, half on confirmation.\n\nThe target spends time near the abandoned factory,\nlate at night—isolated and careless.\n\nThis needs to be fast and silent.\n\nReply with:\n“Shadow Confirmed”.\n\nMore details will follow.\nBe sharp.\nBe invisible.",
+	"Reward": 50
+}
+}

@@ -7,7 +7,7 @@ public class Computer : Script, IInteractable
     public Actor computerScreenUI;
     public override void OnStart()
     {
-        //computerScreenUI.IsActive = false;
+        computerScreenUI.IsActive = false;
     }
 
     public void Interact()

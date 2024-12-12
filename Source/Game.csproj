@@ -189,6 +189,7 @@
     <Compile Include="Game\Door.cs" />
     <Compile Include="Game\EmailUi.cs" />
     <Compile Include="Game\Enemy.cs" />
+    <Compile Include="Game\ExitDoor.cs" />
     <Compile Include="Game\ExitOnEsc.cs" />
     <Compile Include="Game\FreeCamera.cs" />
     <Compile Include="Game\GameManager.cs" />

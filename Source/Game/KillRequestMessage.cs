@@ -10,6 +10,7 @@ public class KillRequestMessage : Script
     public JsonAssetReference<KillRequest> killRequest;
     private UIControl uiControl;
     private Button thisButton;
+    private Button approveButton;
 
     public override void OnAwake()
     {
@@ -18,19 +19,31 @@ public class KillRequestMessage : Script
     public override void OnStart()
     {
         thisButton = uiControl.Get<Button>();
+        approveButton = GameManager.EmailUI.ApproveButton;
     }
-    public override void OnUpdate()
+    public override void OnEnable()
     {
         thisButton.ButtonClicked += ThisButton_ButtonClicked;
+        approveButton.ButtonClicked += ApproveButton_ButtonClicked;
+    }
+
+    public override void OnDisable()
+    {
+        thisButton.ButtonClicked -= ThisButton_ButtonClicked;
+        approveButton.ButtonClicked -= ApproveButton_ButtonClicked;
+    }
+    private void ApproveButton_ButtonClicked(Button obj)
+    {
+        GameManager.CurrentMission = killRequest.Instance.MissionScene;
     }
 
     private void ThisButton_ButtonClicked(Button obj)
     {
-        //Float2 measured = GameManager.EmailUI.request.TextStyle.Font.GetFont().MeasureText(killRequest.Instance.Message);
+        //Float2 measured = GameManager.EmailUI.Request.TextStyle.Font.GetFont().MeasureText(killRequest.Instance.Message);
         if (GameManager.EmailUI)
         {
-            GameManager.EmailUI.request.Text = killRequest.Instance.Message;
-            GameManager.EmailUI.subject.Text = killRequest.Instance.Subject;
+            GameManager.EmailUI.Request.Text = killRequest.Instance.Message;
+            GameManager.EmailUI.Subject.Text = killRequest.Instance.Subject;
         }
 
     }

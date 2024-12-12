@@ -6,33 +6,31 @@ namespace Game;
 
 public class EmailUi : Script
 {
-    private UIControl messagesTilePanel;
+    private UIControl _messagesTilePanel;
 
     private UIControl _subject;
     private UIControl _request;
     private UIControl _approveButton;
 
     [HideInEditor]
-    public RichTextBox subject;
+    public RichTextBox Subject { get; set; }
     [HideInEditor]
-    public RichTextBox request;
+    public RichTextBox Request { get; set; }
     [HideInEditor]
-    public Button approveButton;
+    public Button ApproveButton { get; set; }
 
     public override void OnAwake()
     {
-        messagesTilePanel = Actor.GetChild("Contains").As<UIControl>();
-        _subject = messagesTilePanel.GetChild("Subject").As<UIControl>();
-        _request = messagesTilePanel.GetChild("Request").As<UIControl>();
-        _approveButton = messagesTilePanel.GetChild("Approve").As<UIControl>();
+        _messagesTilePanel = Actor.GetChild("Contains").As<UIControl>();
+        _subject = _messagesTilePanel.GetChild("Subject").As<UIControl>();
+        _request = _messagesTilePanel.GetChild("Request").As<UIControl>();
+        _approveButton = _messagesTilePanel.GetChild("Approve").As<UIControl>();
     }
 
     public override void OnStart()
     {
-        subject = _subject.Get<RichTextBox>();
-        request = _request.Get<RichTextBox>();
-        approveButton = _approveButton.Get<Button>();
-        Debug.Log(_subject);
-        Debug.Log(request);
+        Subject = _subject.Get<RichTextBox>();
+        Request = _request.Get<RichTextBox>();
+        ApproveButton = _approveButton.Get<Button>();
     }
 }

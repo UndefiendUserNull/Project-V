@@ -9,4 +9,5 @@ public class KillRequest
     public string Message { get; set; }
     public int Reward { get; set; }
     // Audio Message
+    public SceneReference MissionScene { get; set; }
 }

@@ -112,6 +112,7 @@ public class PlayerController : Script
                 movement.Y = 0;
             }
         }
+
     }
 
     public override void OnFixedUpdate()

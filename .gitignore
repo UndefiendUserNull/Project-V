@@ -8,3 +8,5 @@ Source/obj
 /Content/Models
 /Content/Textures
 /.vscode
+/Content/
+/Content/Materials/ground.flax

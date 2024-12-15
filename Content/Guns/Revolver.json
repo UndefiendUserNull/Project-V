@@ -1,12 +1,12 @@
 {
 	"ID": "257d2539478d11ad5df6eaa7d16a5816",
 	"TypeName": "Game.Gun",
-	"EngineBuild": 6605,
+	"EngineBuild": 6606,
 	"Data": {
-	"name": "Revolver",
-	"fireRate": 1.0,
-	"damage": 30,
-	"range": 5000.0,
-	"model": "b0edb9f343290a25c979b991bd17cde4"
+	"Name": "Revolver",
+	"FireRate": 1.0,
+	"Damage": 30,
+	"Range": 5000.0,
+	"Model": "1117875e48cd198de70088a055afa0be"
 }
 }

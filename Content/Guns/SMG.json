@@ -1,12 +1,12 @@
 {
 	"ID": "8f507f8640295d139aa102b85db5a771",
 	"TypeName": "Game.Gun",
-	"EngineBuild": 6605,
+	"EngineBuild": 6606,
 	"Data": {
-	"name": "SMG",
-	"fireRate": 0.05,
-	"damage": 5,
-	"range": 900.0,
-	"model": "fd061300406f834f539868a07c3616f4"
+	"Name": "SMG",
+	"FireRate": 0.05,
+	"Damage": 5,
+	"Range": 900.0,
+	"Model": "a262afd94a911e081f4615aa1b834446"
 }
 }

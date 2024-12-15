@@ -134,7 +134,7 @@ public class GameManager : Script
             {
                 debugText = $"FPS: {Engine.FramesPerSecond}\n" +
         $"Player Speed: {MathF.Truncate(PlayerController.currentSpeed)}\n" +
-        $"";
+        $"Level State: {CurrentPlayerLevelState}\n";
                 DebugLabel.Text = debugText;
             }
         }

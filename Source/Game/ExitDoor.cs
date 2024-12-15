@@ -31,7 +31,10 @@ public class ExitDoor : Script
         {
             sceneToLoad = GameManager.CurrentMission;
             if (sceneToLoad.ID != Guid.Empty)
+            {
+                GameManager.CurrentPlayerLevelState = GameManager.PlayerLevelState.MISSION;
                 Level.ChangeSceneAsync(sceneToLoad);
+            }
             else
                 Debug.LogError("No Mission Selected");
         }

@@ -1,0 +1,21 @@
+{
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"gulp.autoDetect": "off",
+		"jake.autoDetect": "off",
+		"grunt.autoDetect": "off",
+		"omnisharp.defaultLaunchSolution": "Project V.sln",
+		"omnisharp.useModernNet": true
+	},
+	"folders": [
+		{
+			"name": "Project V",
+			"path": "."
+		},
+		{
+			"name": "Flax",
+			"path": "C:\\Program Files (x86)\\Flax\\Flax_master"
+		}
+	]
+}

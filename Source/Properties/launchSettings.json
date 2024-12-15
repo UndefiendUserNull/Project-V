@@ -3,7 +3,7 @@
     "Game": {
       "commandName": "Executable",
       "workingDirectory": "D:/Flax Projects/Project V",
-      "executablePath": "C:/Program Files/Flax/Flax_1.9/Binaries/Editor/Win64/Development/FlaxEditor.exe",
+      "executablePath": "C:/Program Files (x86)/Flax/Flax_master/Binaries/Editor/Win64/Development/FlaxEditor.exe",
       "commandLineArgs": "-project \"D:/Flax Projects/Project V\"",
       "nativeDebugging": false
     }

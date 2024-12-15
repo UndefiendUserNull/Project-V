@@ -120,17 +120,17 @@ public class PlayerRaycastController : Script
 
     public override void OnFixedUpdate()
     {
-        GameManager.AddDebugText($"Current Gun: {currentGun.Instance.Name}\n");
+        GameManager.Instance.AddDebugText($"Current Gun: {currentGun.Instance.Name}\n");
         if (Physics.RayCast(shootRay.Position, shootRay.Direction, out hit, currentRange, hittableLayers))
         {
             IHittable hittable = hit.Collider?.GetScript<IHittable>();
             IInteractable interactable = hit.Collider?.GetScript<IInteractable>();
             shootRayColor = Color.Red;
             var hitActor = hit.Collider;
-            GameManager.AddDebugText($"RayHit: {hitActor.Name}");
+            GameManager.Instance.AddDebugText($"RayHit: {hitActor.Name}");
 
             if (hittable != null)
-                GameManager.AddDebugText($"\nEnemy Health: {hittable.Health}");
+                GameManager.Instance.AddDebugText($"\nEnemy Health: {hittable.Health}");
 
             GameManager.CrosshairUiImage.BackgroundColor = Color.Red;
             storedHittable = hittable;
@@ -142,7 +142,7 @@ public class PlayerRaycastController : Script
             storedInteractable = null;
             shootRayColor = Color.Green;
             GameManager.CrosshairUiImage.BackgroundColor = Color.White;
-            GameManager.AddDebugText("RayHit: None");
+            GameManager.Instance.AddDebugText("RayHit: None");
         }
     }
 }

@@ -4,9 +4,10 @@ namespace Game;
 
 public class Computer : Script, IInteractable
 {
-    public Actor computerScreenUI;
+    private Actor computerScreenUI;
     public override void OnStart()
     {
+        computerScreenUI = GameManager.ComputerScreen;
         computerScreenUI.IsActive = false;
     }
 

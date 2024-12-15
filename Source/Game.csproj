@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Debug|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -63,7 +63,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Debug|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -84,7 +84,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Development|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -105,7 +105,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Editor.Windows.Release|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -126,7 +126,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Debug|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -147,7 +147,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Development|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -168,13 +168,13 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(Configuration)|$(Platform)' == 'Game.Windows.Release|x64' ">
     <Reference Include="Newtonsoft.Json">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Source\Platforms\DotNet\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="FlaxEngine.CSharp">
-      <HintPath>C:\Program Files\Flax\Flax_1.9\Binaries\Editor\Win64\Development\FlaxEngine.CSharp.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Flax\Flax_master\Binaries\Editor\Win64\Development\FlaxEngine.CSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -189,6 +189,7 @@
     <Compile Include="Game\Door.cs" />
     <Compile Include="Game\EmailUi.cs" />
     <Compile Include="Game\Enemy.cs" />
+    <Compile Include="Game\Entity.cs" />
     <Compile Include="Game\ExitDoor.cs" />
     <Compile Include="Game\ExitOnEsc.cs" />
     <Compile Include="Game\FreeCamera.cs" />
@@ -200,6 +201,7 @@
     <Compile Include="Game\KillRequest.cs" />
     <Compile Include="Game\KillRequestMessage.cs" />
     <Compile Include="Game\MainCamera.cs" />
+    <Compile Include="Game\MainTarget.cs" />
     <Compile Include="Game\PlayerController.cs" />
     <Compile Include="Game\PlayerRaycastController.cs" />
   </ItemGroup>

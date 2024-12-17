@@ -25,6 +25,7 @@ public class GameManager : Script
     public static Actor ComputerScreen { get; private set; }
 
 
+    public bool debugMode = true;
     public int targetFPS = 60;
 
     private Prefab Pre_Player;
@@ -33,20 +34,24 @@ public class GameManager : Script
     private Prefab Pre_PC_Screen;
     private Prefab Pre_MainUI;
     private Prefab Pre_Computer;
+    private Prefab Pre_DebugConsoleUI;
 
     private UIControl controlDebugLabel;
     private UIControl controlCrosshair;
     private UIControl controlEmailUi;
     private UICanvas mainUI;
+    private UICanvas debugConsoleUI;
 
     private readonly Vector3 COMPUTER_SPAWN_POSITION = new(8.0f, -230.0f, -180.0f);
     private readonly string PREFABS_FOLDER = Path.Combine(Globals.ProjectContentFolder, "Prefabs");
+    public static readonly string SCENES_FOLDER = Path.Combine(Globals.ProjectContentFolder, "Scenes");
     private const string PATH_PRE_PLAYER = "PLAYER.prefab";
     private const string PATH_PRE_DEBUG_UIC = "DEBUG_UIC.prefab";
     private const string PATH_PRE_EMAILUI = "EMAILUI.prefab";
     private const string PATH_PRE_PC_SCREEN = "PC_SCREEN.prefab";
     private const string PATH_PRE_MAIN_UI = "MAIN_UI.prefab";
     private const string PATH_PRE_COMPUTER = "COMPUTER.prefab";
+    private const string PATH_PRE_DEBUG_CONSOLEUI = "DEBUG_CONSOLEUI.prefab";
 
     public static GameManager Instance { get; private set; }
 
@@ -66,11 +71,15 @@ public class GameManager : Script
     private void LoadPrefabs()
     {
         Pre_Player = LoadPrefab(PATH_PRE_PLAYER);
-        Pre_DebugUIC = LoadPrefab(PATH_PRE_DEBUG_UIC);
         Pre_PC_Screen = LoadPrefab(PATH_PRE_PC_SCREEN);
         Pre_MainUI = LoadPrefab(PATH_PRE_MAIN_UI);
         Pre_ControlEmailUi = LoadPrefab(PATH_PRE_EMAILUI);
         Pre_Computer = LoadPrefab(PATH_PRE_COMPUTER);
+        if (debugMode)
+        {
+            Pre_DebugUIC = LoadPrefab(PATH_PRE_DEBUG_UIC);
+            Pre_DebugConsoleUI = LoadPrefab(PATH_PRE_DEBUG_CONSOLEUI);
+        }
     }
 
     private void Init()
@@ -78,7 +87,13 @@ public class GameManager : Script
         Debug.Log("Game Init");
 
         mainUI = PrefabManager.SpawnPrefab(Pre_MainUI, Scene).As<UICanvas>();
-        controlDebugLabel = PrefabManager.SpawnPrefab(Pre_DebugUIC, mainUI).As<UIControl>();
+
+        if (debugMode)
+        {
+            controlDebugLabel = PrefabManager.SpawnPrefab(Pre_DebugUIC, mainUI).As<UIControl>();
+            debugConsoleUI = PrefabManager.SpawnPrefab(Pre_DebugConsoleUI, mainUI).As<UICanvas>();
+            debugConsoleUI.IsActive = false;
+        }
 
         if (CurrentPlayerLevelState == PlayerLevelState.ROOM)
         {
@@ -112,15 +127,18 @@ public class GameManager : Script
 
     public override void OnStart()
     {
-
         Init();
-        DebugLabel = controlDebugLabel.Get<Label>();
+
+        if (debugMode)
+            DebugLabel = controlDebugLabel.Get<Label>();
+
         CrosshairUiImage = controlCrosshair.Get<Image>();
         if (CurrentPlayerLevelState == PlayerLevelState.ROOM)
         {
             EmailUI = controlEmailUi.GetScript<EmailUi>();
         }
     }
+
     public override void OnUpdate()
     {
         if (!Player)
@@ -130,12 +148,15 @@ public class GameManager : Script
         }
         else
         {
-            if (DebugLabel != null)
+            if (debugMode)
             {
-                debugText = $"FPS: {Engine.FramesPerSecond}\n" +
-        $"Player Speed: {MathF.Truncate(PlayerController.currentSpeed)}\n" +
-        $"Level State: {CurrentPlayerLevelState}\n";
-                DebugLabel.Text = debugText;
+                if (DebugLabel != null)
+                {
+                    debugText = $"FPS: {Engine.FramesPerSecond}\n" +
+            $"Player Speed: {MathF.Truncate(PlayerController.currentSpeed)}\n" +
+            $"Level State: {CurrentPlayerLevelState}\n";
+                    DebugLabel.Text = debugText;
+                }
             }
         }
 
@@ -148,10 +169,17 @@ public class GameManager : Script
     }
     public void AddDebugText(string text)
     {
-        if (controlDebugLabel)
+        if (debugMode)
         {
-            debugText += text;
-            DebugLabel.Text = debugText;
+            if (controlDebugLabel)
+            {
+                debugText += text;
+                DebugLabel.Text = debugText;
+            }
+        }
+        else
+        {
+            debugText = "";
         }
     }
 

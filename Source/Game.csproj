@@ -184,6 +184,7 @@
     <Compile Include="Game\AllVehicleSettingsChanger.cs" />
     <Compile Include="Game\Computer.cs" />
     <Compile Include="Game\ComputerScreen.cs" />
+    <Compile Include="Game\DebugConsole.cs" />
     <Compile Include="Game\DebugText.cs" />
     <Compile Include="Game\DebugTools.cs" />
     <Compile Include="Game\Door.cs" />

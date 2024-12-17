@@ -36,6 +36,12 @@
 			"V": {}
 		},
 		{
+			"ID": "e2808d8047b476778fa306a8e0f56bb4",
+			"TypeName": "Game.DebugConsole",
+			"ParentID": "f84991434e64dc351f59e8a83c67ddb3",
+			"V": {}
+		},
+		{
 			"ID": "913c6071499d30f86c15ac869933dc01",
 			"TypeName": "FlaxEngine.Sky",
 			"ParentID": "f84991434e64dc351f59e8a83c67ddb3",

@@ -13,7 +13,7 @@
 	"AdditionalScenes": null,
 	"AdditionalAssetFolders": [
 		"D:\\Flax Projects/Project V/Content/Prefabs",
-		""
+		"D:\\Flax Projects/Project V/Content/Scenes"
 	],
 	"ShadersNoOptimize": false,
 	"ShadersGenerateDebugData": false,
@@ -42,7 +42,7 @@
 					"Name": "Windows 64bit",
 					"Output": "Output\\Win64",
 					"Platform": 2,
-					"Mode": 0,
+					"Mode": 2,
 					"CustomDefines": null,
 					"PreBuildAction": null,
 					"PostBuildAction": null
